@@ -46,7 +46,7 @@ class AuthController extends Controller
 
             $user = $auth->user();
 
-            $token = $user->createUserToken($user);
+            $token = $auth->createUserToken($user);
         } catch (\Exception $e) {
 
             DB::rollBack();
