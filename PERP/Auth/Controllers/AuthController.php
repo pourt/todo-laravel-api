@@ -47,14 +47,14 @@ class AuthController extends Controller
             $user = $auth->user();
 
             $token = $auth->createUserToken($user);
+
+            DB::commit();
         } catch (\Exception $e) {
 
             DB::rollBack();
 
             return $this->error($e->getMessage(), $e->getCode());
         }
-
-        DB::commit();
 
         return $this->success(
             [
