@@ -172,7 +172,6 @@ return [
         /**
          * Package Routes
          */
-        PERP\Routes\Routes::class,
     ])->toArray(),
 
     /*
